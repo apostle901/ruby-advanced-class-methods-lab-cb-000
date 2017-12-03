@@ -44,6 +44,3 @@ class Song
   end
 
 end
-
-Build a class method Song.alphabetical that returns all the songs in ascending (a-z) alphabetical order.
-Use Array#sort_by.
