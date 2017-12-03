@@ -38,7 +38,11 @@ class Song
     song ||= Song.create_by_name(name)
   end
 
+  def self.alphabetical
+    @@all.sort_by {|obj| obj.name}
+  end
+
 end
 
-song_1 = Song.find_or_create_by_name("Blank Space")
-song_2 = Song.find_or_create_by_name("Blank Space")
+Build a class method Song.alphabetical that returns all the songs in ascending (a-z) alphabetical order.
+Use Array#sort_by.
