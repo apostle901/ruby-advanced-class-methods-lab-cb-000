@@ -43,4 +43,11 @@ class Song
     names
   end
 
+  def self.new_from_filename(full_song)
+    name, song = full_song.split(" - ")
+    artist = self.new_by_name(song.chomp(".mp3"))
+    artist.artist_name = name
+    artist
+  end
+
 end
