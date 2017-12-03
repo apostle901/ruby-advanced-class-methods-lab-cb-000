@@ -29,8 +29,16 @@ class Song
   end
 
   def self.find_by_name(name)
-    song = Song.all.detect{|artist| artist.name == name}
+    song = Song.all.detect{|title| title.name == name}
     song
   end
 
+  def self.find_or_create_by_name(name)
+    song = Song.all.detect{|title| title.name == name}
+    song ||= Song.new_by_name(name)
+  end
+
 end
+
+song_1 = Song.find_or_create_by_name("Blank Space")
+song_2 = Song.find_or_create_by_name("Blank Space")
